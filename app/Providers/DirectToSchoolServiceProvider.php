@@ -8,17 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
-class RouteServiceProvider extends ServiceProvider {
-    /**
-     * The path to the "home" route for your application.
-     *
-     * This is used by Laravel authentication to redirect users after login.
-     *
-     * @var string
-     */
-
-    public const HOME = '/home';
-
+class DirectToSchoolServiceProvider extends ServiceProvider {
+    
     /**
      * The controller namespace for the application.
      *
@@ -34,20 +25,22 @@ class RouteServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        $this->configureRateLimiting();
+        if(config('app.school_no')) {
+            $this->configureRateLimiting();
 
-        $this->routes(function () {
-            Route::prefix('api')
-                ->middleware('api')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/api.php'));
+            $this->routes(function () {
+                Route::prefix('api')
+                    ->middleware('api')
+                    ->namespace($this->namespace)
+                    ->group(base_path('/routes/' . config("app.school_no") . '/api.php'));
 
-            Route::middleware('web')
-                ->namespace($this->namespace)
-                ->group(base_path('routes/web.php'));
-        });
+                Route::middleware('web')
+                    ->namespace($this->namespace)
+                    ->group(base_path('/routes/' . config("app.school_no") . '/web.php'));
+            });
+        }
     }
-
+        
     /**
      * Configure the rate limiters for the application.
      *

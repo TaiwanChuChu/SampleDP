@@ -175,6 +175,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\DirectToSchoolServiceProvider::class,
+
     ],
 
     /*
@@ -228,5 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+    'school_no' => env('SCHOOL_NO', 'ALLTOP'),
 
 ];

@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('ntue')->group(function(){
+	Route::resource('/form', 'A01\A01110Controller');
 });
-Route::resource('/form', 'A01\A01110Controller');
