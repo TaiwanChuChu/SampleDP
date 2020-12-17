@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::resource('/form', 'A01\A01110Controller');
+
+
