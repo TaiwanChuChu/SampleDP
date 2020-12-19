@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
+<body style="background-color: #aaa;">
     <div class="container">
         <nav class="navbar navbar-light bg-dark mb-2">
             <span class="navbar-brand mb-0 h1 text-light">

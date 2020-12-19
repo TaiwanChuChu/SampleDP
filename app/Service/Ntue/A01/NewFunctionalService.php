@@ -1,20 +1,20 @@
-<?php 
+<?php
 
-namespace App\Service\Base\A01;
+namespace App\Service\Ntue\A01;
 
 use App\Contracts\Service\FormServiceInterFace;
 use Illuminate\Http\Request;
 
-class A01110Service implements FormServiceInterFace
+class NewFunctionalService implements FormServiceInterFace
 {
-	public function index() 
+	public function index()
 	{
-		return view('Base.A01.A01110.index');
+		return view('Ntue.A01.NewFunctional.index');
 	}
 
 	public function create() 
 	{
-		return view('Base.A01.A01110.create');
+		return view('Ntue.A01.NewFunctional.create');
 	}
 
 	public function store(Request $request) 

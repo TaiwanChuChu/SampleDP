@@ -20,10 +20,11 @@ class Controller extends BaseController
 
             $action = request()->route()->getAction();
 
-            $ServiceName = explode('Controller', str_replace('App\Http\Controllers\\', 'App\Service\\' . $school_no . '\\' , $action['controller']))[0] . 'Service';
-
+            $ServiceName = explode('Controller', str_replace('App\Http\Controllers\\' . $school_no . '\\', 'App\Service\\' . $school_no . '\\' , $action['controller']))[0] . 'Service';
+// dd($ServiceName);
             if(class_exists($ServiceName)) {
                 $this->service = app()->make($ServiceName);
+                // dd($this->service );
                 return $this->service;
             }
         }

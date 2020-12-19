@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\A01;
+namespace App\Http\Controllers\Base\A01;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -31,6 +31,7 @@ class A01110Controller extends Controller
     public function create()
     {
         //
+        return $this->service->create();
     }
 
     /**

@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::resource('/form', 'A01\A01110Controller');
+Route::resource('/form', 'Base\A01\A01110Controller');
 
 
