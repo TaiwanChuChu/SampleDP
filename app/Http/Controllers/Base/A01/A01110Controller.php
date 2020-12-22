@@ -43,6 +43,7 @@ class A01110Controller extends Controller
     public function store(Request $request)
     {
         //
+        return $this->service->store($request);
     }
 
     /**

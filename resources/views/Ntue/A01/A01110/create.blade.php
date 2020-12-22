@@ -9,7 +9,8 @@
     <div class="mb-3">
         <a href="{{ route('form.index') }}" class="btn btn-danger">Exit</a>
     </div>
-    <form method="post">
+    <form method="post" action="{{ route('form.stroe') }}">
+        @csrf
         <div class="form-group">
             <label for="name">Name</label>
             <input type="name" class="form-control" id="name">

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    A01-Base Index
+    A01110-Base Index
 @endsection
 
 @section('content')
