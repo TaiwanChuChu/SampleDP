@@ -5,6 +5,17 @@
 @endsection
 
 @section('content')
+    <div class="form-group">
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul style="color: white;">
+                    @foreach ($errors->all() as $error)
+                        <li class="text-dark">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    </div>
     {{-- optional block --}}
     <div class="mb-3">
         <a href="{{ route('form.index') }}" class="btn btn-danger">Exit</a>

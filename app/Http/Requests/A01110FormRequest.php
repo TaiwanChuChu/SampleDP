@@ -25,7 +25,15 @@ class A01110FormRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'fuck',
+            'email.required' => 'fuck email!',
         ];
     }
 }

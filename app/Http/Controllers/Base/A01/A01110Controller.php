@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers\Base\A01;
 
+use App\Contracts\Service\FormServiceInterFace;
 use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Request;
 
 class A01110Controller extends Controller
 {
-    public function __construct()
+    protected $service;
+    protected $formRequest;
+
+    public function __construct(FormServiceInterFace $serviceInterFace)
     {
 //        parent::__construct();
+        // DI FormServiceInterFace
+        $this->service = $serviceInterFace;
+//        $this->formRequest = $formRequest;
     }
 
     /**
@@ -40,7 +48,7 @@ class A01110Controller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormRequest $request)
     {
         //
         return $this->service->store($request);

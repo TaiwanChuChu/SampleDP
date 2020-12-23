@@ -32,12 +32,7 @@ class A01110Service implements FormServiceInterFace
 
 	public function store(Request $request)
 	{
-//	    dd([['name' => $request->name, 'email' => $request->email]]);
-//	    if($this->FormRequest->validate(['name' => $request->name, 'email' => $request->email])) {
-//	        dd(123);
-//        } else {
-//	        dd(456);
-//        }
+
 	}
 
 	public function show($id)
