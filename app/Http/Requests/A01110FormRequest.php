@@ -24,8 +24,8 @@ class A01110FormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'require',
-            'email' => 'require|email',
+            'name' => 'required',
+            'email' => 'required',
         ];
     }
 }

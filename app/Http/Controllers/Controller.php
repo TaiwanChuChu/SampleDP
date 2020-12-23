@@ -15,7 +15,7 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        if(request()->route()) {
+        if(request()->route()->action['controller']) {
             $school_no = config('app.school_no') == '' ? 'Base' : config('app.school_no');
 
             $action = request()->route()->getAction();
@@ -25,7 +25,6 @@ class Controller extends BaseController
             $controller = explode('\\', $action['controller']);
 
             $ServiceName = explode('Controller', 'App\Service\\' . $school_no . '\\' . $controller[4] . '\\' . $controller[5])[0] . 'Service';
-
             if(class_exists($ServiceName)) {
                 $this->service = app()->make($ServiceName);
                 return $this->service;

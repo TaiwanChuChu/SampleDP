@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
-
+Route::get('/', function(){
+    dd('123123123123', request()->route()->action);
+});
 Route::resource('/form', 'Base\A01\A01110Controller');
 
 

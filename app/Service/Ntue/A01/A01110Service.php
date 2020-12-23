@@ -12,19 +12,21 @@ class A01110Service extends BaseA01110Service
 
 	// }
 
-	public function index()
-	{
-		return view('Ntue.A01.A01110.index');
-	}
+//	public function index()
+//	{
+//		return view('Ntue.A01.A01110.index');
+//	}
 
-	// public function create() 
-	// {
-	// 	return view('Ntue.A01.A01110.create');
-	// }
+//	 public function create()
+//	 {
+//	    dd($this->FormRequest->rules());
+//        return view('Ntue.A01.A01110.create');
+//	 }
 
 	// public function getRequest(){
 	// 	return $this->request = request();
 	// }
+
 
 
 }
