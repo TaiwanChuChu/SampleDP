@@ -30232,7 +30232,9 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
+window.$ = window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a; // mix.postCss("resources/css/app.css", "public/css", [
+//     require('tailwindcss'),
+// ]);
 
 /***/ }),
 

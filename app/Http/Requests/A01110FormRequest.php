@@ -32,8 +32,9 @@ class A01110FormRequest extends FormRequest
     public function messages()
     {
         return [
-            'name.required' => 'fuck',
-            'email.required' => 'fuck email!',
+            'name.required' => 'name欄位為必填',
+            'email.required' => 'email欄位為必填',
+            'email.email' => 'email格式有誤',
         ];
     }
 }

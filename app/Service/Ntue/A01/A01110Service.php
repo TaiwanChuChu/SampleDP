@@ -26,9 +26,6 @@ class A01110Service extends BaseA01110Service
 	// public function getRequest(){
 	// 	return $this->request = request();
 	// }
-
-
-
 }
 
  ?>

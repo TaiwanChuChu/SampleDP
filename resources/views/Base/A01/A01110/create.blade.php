@@ -18,9 +18,9 @@
     </div>
     {{-- optional block --}}
     <div class="mb-3">
-        <a href="{{ route('form.index') }}" class="btn btn-danger">Exit</a>
+        <a href="{{ route('a01110.index') }}" class="btn btn-danger">Exit</a>
     </div>
-    <form method="post" action="{{ route('form.store') }}">
+    <form method="post" action="{{ route('a01110.store') }}">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>

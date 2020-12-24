@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function(){
     dd('123123123123', request()->route()->action);
 });
-Route::resource('/form', 'Base\A01\A01110Controller');
+Route::resource('/a01110', 'Base\A01\A01110Controller');
 
+Route::resource('/a01120', 'Base\A01\A01120Controller');
 

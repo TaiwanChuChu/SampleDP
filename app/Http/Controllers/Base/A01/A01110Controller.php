@@ -5,19 +5,15 @@ namespace App\Http\Controllers\Base\A01;
 use App\Contracts\Service\FormServiceInterFace;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Http\Request;
 
 class A01110Controller extends Controller
 {
     protected $service;
-    protected $formRequest;
 
     public function __construct(FormServiceInterFace $serviceInterFace)
     {
-//        parent::__construct();
         // DI FormServiceInterFace
         $this->service = $serviceInterFace;
-//        $this->formRequest = $formRequest;
     }
 
     /**
@@ -45,7 +41,7 @@ class A01110Controller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(FormRequest $request)
@@ -57,7 +53,7 @@ class A01110Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -68,7 +64,7 @@ class A01110Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -79,11 +75,11 @@ class A01110Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FormRequest $request, $id)
     {
         //
     }
@@ -91,7 +87,7 @@ class A01110Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Contracts\Service\FormServiceInterFace;
-use App\Service\Base\A01\A01110Service;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bind(FormServiceInterFace::class, function($app){
+        $this->app->bind(FormServiceInterFace::class, function ($app) {
             $school_no = config('app.school_no') == '' ? 'Base' : config('app.school_no');
 
             $action = request()->route()->getAction();
@@ -26,12 +25,13 @@ class AppServiceProvider extends ServiceProvider
 
             $controller = explode('\\', $action['controller']);
             $ServiceName = explode('Controller', 'App\Service\\' . $school_no . '\\' . $controller[4] . '\\' . $controller[5])[0] . 'Service';
-            if(class_exists($ServiceName)) {
+//            dd($ServiceName);
+            if (class_exists($ServiceName)) {
                 return $app->make($ServiceName);
             }
         });
 
-        $this->app->bind(FormRequest::class, function($app){
+        $this->app->bind(FormRequest::class, function ($app) {
             $school_no = config('app.school_no') == '' ? 'Base' : config('app.school_no');
 
             $action = request()->route()->getAction();
@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
             $controller = explode('\\', $action['controller']);
 
             $ServiceName = explode('Controller', 'App\Http\Requests\\' . $controller[5])[0] . 'FormRequest';
-            if(class_exists($ServiceName)) {
+            if (class_exists($ServiceName)) {
                 return $app->make($ServiceName);
             }
         });
